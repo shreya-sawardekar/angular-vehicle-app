@@ -1,0 +1,9 @@
+nav a {
+  padding: 1em;
+  display: inline-block;
+  cursor: pointer;
+}
+nav a:hover {
+  text-decoration: underline;
+  color: rgb(27, 138, 138);
+}
