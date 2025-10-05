@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./vehicle-list.component.css'],
 })
 export class VehicleListComponent {
-  vehicleList = [
+  vehicleList: Vehicle[] = [
     {
       id: 1,
       name: 'Sand Crawler',
@@ -48,4 +48,13 @@ export class VehicleListComponent {
       name: 'Sail barge',
     },
   ];
+
+  showDetails(data: Vehicle): void {
+    console.log({ data });
+  }
+}
+
+interface Vehicle {
+  id: number;
+  name: string;
 }

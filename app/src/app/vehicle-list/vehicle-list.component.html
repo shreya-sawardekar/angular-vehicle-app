@@ -2,7 +2,7 @@
   <h3>Vehicles</h3>
   <ul>
     <li *ngFor="let vehicle of vehicleList">
-      <a>{{ vehicle.name }}</a>
+      <a (click)="showDetails(vehicle)">{{ vehicle.name }}</a>
     </li>
   </ul>
 </div>
