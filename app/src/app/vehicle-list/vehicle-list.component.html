@@ -1,8 +1,15 @@
-<div>
-  <h3>Vehicles</h3>
-  <ul>
-    <li *ngFor="let vehicle of vehicleList">
-      <a (click)="showDetails(vehicle)">{{ vehicle.name }}</a>
-    </li>
-  </ul>
+<div class="flex-section">
+  <div id="vehicle-list">
+    <h3>Vehicles</h3>
+    <ul>
+      <li *ngFor="let vehicle of vehicleList">
+        <a (click)="showDetails(vehicle)">{{ vehicle.name }}</a>
+      </li>
+    </ul>
+  </div>
+  <ng-container *ngIf="showVhDetails">
+    <vhapp-vehicle-details
+      [vehicleDetails]="vehicleDetails"
+    ></vhapp-vehicle-details>
+  </ng-container>
 </div>

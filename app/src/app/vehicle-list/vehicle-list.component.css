@@ -1,4 +1,4 @@
-div {
+div#vehicle-list {
   width: 350px;
   border: 1px solid #dcdcdc;
 }
@@ -21,4 +21,8 @@ li a {
 }
 li a:hover {
   background-color: #f6f6f6;
+}
+.flex-section {
+  display: flex;
+  gap: 1em;
 }

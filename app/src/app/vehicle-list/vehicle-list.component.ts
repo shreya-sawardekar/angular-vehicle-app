@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Vehicle } from '../models/vehicle.model';
 
 @Component({
   selector: 'vhapp-vehicle-list',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./vehicle-list.component.css'],
 })
 export class VehicleListComponent {
+  showVhDetails = false;
+  vehicleDetails!: Vehicle;
   vehicleList: Vehicle[] = [
     {
       id: 1,
@@ -51,10 +54,11 @@ export class VehicleListComponent {
 
   showDetails(data: Vehicle): void {
     console.log({ data });
+    if (data) {
+      this.vehicleDetails = data;
+      this.showVhDetails = true;
+    } else {
+      this.showVhDetails = false;
+    }
   }
-}
-
-interface Vehicle {
-  id: number;
-  name: string;
 }
