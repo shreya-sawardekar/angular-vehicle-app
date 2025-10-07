@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 import { HomeComponent } from './home/home.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, VehicleListComponent, HomeComponent, VehicleDetailsComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    VehicleListComponent,
+    HomeComponent,
+    VehicleDetailsComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
