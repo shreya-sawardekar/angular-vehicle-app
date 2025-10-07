@@ -9,7 +9,7 @@ import { VehicleService } from '../services/vehicle.service';
 })
 export class VehicleListComponent implements OnInit {
   showVhDetails = false;
-  vehicleDetails!: Vehicle;
+  selectedVehicle!: Vehicle;
   vehicleList: Vehicle[] = [];
 
   constructor(private apiService: VehicleService) {}
@@ -34,7 +34,7 @@ export class VehicleListComponent implements OnInit {
 
   showDetails(data: Vehicle): void {
     if (data) {
-      this.vehicleDetails = data;
+      this.selectedVehicle = data;
       this.showVhDetails = true;
     } else {
       this.showVhDetails = false;

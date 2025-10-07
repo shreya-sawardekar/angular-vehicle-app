@@ -1,11 +1,11 @@
 div#vehicle-list {
   width: 350px;
-  border: 1px solid #dcdcdc;
+  border: 1px solid var(--outer-border-color);
 }
 h3 {
-  border: 1px solid #dcdcdc;
+  border: 1px solid var(--outer-border-color);
   padding: 0.5em;
-  background: #f6f6f6;
+  background: var(--title-bg-color);
 }
 ul {
   list-style: none;
@@ -15,12 +15,12 @@ ul {
 li a {
   text-align: center;
   padding: 0.5em;
-  border: 1px solid #eee;
+  border: 1px solid var(--list-border-color);
   display: block;
   cursor: pointer;
 }
 li a:hover {
-  background-color: #f6f6f6;
+  background-color: var(--background-color);
 }
 .flex-section {
   display: flex;

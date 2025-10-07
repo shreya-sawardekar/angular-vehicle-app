@@ -1,11 +1,38 @@
-import { Component, Input } from '@angular/core';
-import { Vehicle } from '../models/vehicle.model';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Vehicle, VehicleDetails } from '../models/vehicle.model';
+import { VehicleService } from '../services/vehicle.service';
 
 @Component({
   selector: 'vhapp-vehicle-details',
   templateUrl: './vehicle-details.component.html',
   styleUrls: ['./vehicle-details.component.css'],
 })
-export class VehicleDetailsComponent {
-  @Input() vehicleDetails!: Vehicle;
+export class VehicleDetailsComponent implements OnChanges {
+  @Input() selectedVehicle!: Vehicle;
+  vehicleDetails!: VehicleDetails;
+
+  constructor(private apiService: VehicleService) {}
+
+  ngOnChanges(): void {
+    if (this.selectedVehicle) {
+      this.getVehicleDetails();
+    }
+  }
+
+  getVehicleDetails() {
+    const result$ = this.apiService.getVehicleDetails(this.selectedVehicle.id);
+    result$.subscribe({
+      next: (res) => {
+        if (res) {
+          this.vehicleDetails = res.filter(
+            (vehicle: VehicleDetails) => vehicle.id === this.selectedVehicle.id
+          )[0];
+          console.log(this.vehicleDetails);
+        }
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
 }

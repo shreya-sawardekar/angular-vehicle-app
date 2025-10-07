@@ -1,3 +1,39 @@
-<p>
-  Showing vehicle details for <strong>{{ vehicleDetails.name }}</strong>
-</p>
+<div class="card" *ngIf="vehicleDetails">
+  <h3 class="card-title">Detail for: {{ vehicleDetails.name }}</h3>
+  <div class="card-body">
+    <ul class="grid-wrapper">
+      <li>
+        <div>Name:</div>
+        <div>{{ vehicleDetails.name }}</div>
+      </li>
+      <li>
+        <div>Classification:</div>
+        <div>{{ vehicleDetails.classification }}</div>
+      </li>
+      <li>
+        <div>Price (in credits):</div>
+        <div>{{ vehicleDetails.price }}</div>
+      </li>
+      <li>
+        <div>Crew:</div>
+        <div>{{ vehicleDetails.crew }}</div>
+      </li>
+      <li>
+        <div>Passengers:</div>
+        <div>{{ vehicleDetails.passengers }}</div>
+      </li>
+      <li>
+        <div>Cargo Capacity:</div>
+        <div>{{ vehicleDetails.cargo_capacity }}</div>
+      </li>
+      <li>
+        <div>Films:</div>
+        <ul class="film-wrapper">
+          <li *ngFor="let name of vehicleDetails.films">
+            {{ name }}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Vehicle } from '../models/vehicle.model';
+import { Vehicle, VehicleDetails } from '../models/vehicle.model';
 
 @Injectable({
   providedIn: 'root',
@@ -10,5 +10,11 @@ export class VehicleService {
 
   getVehicles() {
     return this.http.get<Vehicle[]>('./assets/data/mock-vehicle-list.json');
+  }
+
+  getVehicleDetails(id: number) {
+    return this.http.get<VehicleDetails[]>(
+      './assets/data/mock-vehicle-details.json'
+    );
   }
 }
