@@ -1,11 +1,14 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Vehicle, VehicleDetails } from '../models/vehicle.model';
 import { VehicleService } from '../services/vehicle.service';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'vhapp-vehicle-details',
   templateUrl: './vehicle-details.component.html',
   styleUrls: ['./vehicle-details.component.css'],
+  standalone: true,
+  imports: [NgFor, NgIf],
 })
 export class VehicleDetailsComponent implements OnChanges {
   @Input() selectedVehicle!: Vehicle;

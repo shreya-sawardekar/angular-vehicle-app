@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Vehicle } from '../models/vehicle.model';
 import { VehicleService } from '../services/vehicle.service';
+import { NgFor, NgIf } from '@angular/common';
+import { VehicleDetailsComponent } from '../vehicle-details/vehicle-details.component';
 
 @Component({
   selector: 'vhapp-vehicle-list',
   templateUrl: './vehicle-list.component.html',
   styleUrls: ['./vehicle-list.component.css'],
+  standalone: true,
+  imports: [NgFor, NgIf, VehicleDetailsComponent],
 })
 export class VehicleListComponent implements OnInit {
   showVhDetails = false;
